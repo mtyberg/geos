@@ -66,11 +66,11 @@ if(NOT MSVC)
     "Set to ON|OFF (default) to build GEOS with assert() macro enabled" OFF)
 endif()
 
-option(GEOS_BUILD_STATIC
-  "Set to OFF|ON (default) to build GEOS static libraries" ON)
-
-option(GEOS_BUILD_SHARED
-  "Set to OFF|ON (default) to build GEOS shared libraries" ON)
+#option(GEOS_BUILD_STATIC
+#  "Set to OFF|ON (default) to build GEOS static libraries" ON)
+#
+#option(GEOS_BUILD_SHARED
+#  "Set to OFF|ON (default) to build GEOS shared libraries" ON)
 
 if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
   option(GEOS_ENABLE_FLOATSTORE

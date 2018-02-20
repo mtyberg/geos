@@ -61,36 +61,36 @@ if(GEOS_ENABLE_MACOSX_FRAMEWORK)
 
 else()
 
-  if(GEOS_BUILD_SHARED)
-    add_library(geos SHARED ${geos_SOURCES} ${geos_ALL_HEADERS})
+#  if(GEOS_BUILD_SHARED)
+#    add_library(geos SHARED ${geos_SOURCES} ${geos_ALL_HEADERS})
+#
+#    set_target_properties(geos
+#      PROPERTIES
+#      DEFINE_SYMBOL GEOS_DLL_EXPORT
+#      VERSION ${VERSION}
+#      CLEAN_DIRECT_OUTPUT 1)
+#
+#    install(TARGETS geos
+#      RUNTIME DESTINATION bin
+#      LIBRARY DESTINATION lib
+#      ARCHIVE DESTINATION lib)
+#  endif()
 
-    set_target_properties(geos
-      PROPERTIES
-      DEFINE_SYMBOL GEOS_DLL_EXPORT
-      VERSION ${VERSION}
-      CLEAN_DIRECT_OUTPUT 1)
-
-    install(TARGETS geos
-      RUNTIME DESTINATION bin
-      LIBRARY DESTINATION lib
-      ARCHIVE DESTINATION lib)
-  endif()
-
-  if(GEOS_BUILD_STATIC)
-    add_library(geos-static STATIC ${geos_SOURCES} ${geos_ALL_HEADERS})
-
-    set_target_properties(geos-static
-      PROPERTIES
-      OUTPUT_NAME "geos"
-      PREFIX "lib"
-      CLEAN_DIRECT_OUTPUT 1)
-
-    install(TARGETS geos-static
-      RUNTIME DESTINATION bin
-      LIBRARY DESTINATION lib
-      ARCHIVE DESTINATION lib)
-
-  endif()
+#  if(GEOS_BUILD_STATIC)
+    add_library(geos STATIC ${geos_SOURCES} ${geos_ALL_HEADERS})
+#
+#    set_target_properties(geos-static
+#      PROPERTIES
+#      OUTPUT_NAME "geos"
+#      PREFIX "lib"
+#      CLEAN_DIRECT_OUTPUT 1)
+#
+#    install(TARGETS geos-static
+#      RUNTIME DESTINATION bin
+#      LIBRARY DESTINATION lib
+#      ARCHIVE DESTINATION lib)
+#
+#  endif()
 
 endif() # (GEOS_ENABLE_MACOSX_FRAMEWORK)
 
