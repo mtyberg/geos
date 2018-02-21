@@ -191,6 +191,11 @@ endif()
 include(CheckPrototypeExists)
 include(CheckSymbolExists)
 
+if(IOS)
+    option(HAVE_STD_ISNAN "HAVE_STD_ISNAN" ON)
+    option(HAVE_STD_ISFINITE "HAVE_STD_ISFINITE" ON)
+endif()
+
 check_prototype_exists(isnan cmath HAVE_STD_ISNAN)
 if(NOT HAVE_STD_ISNAN)
   if(MSVC)
